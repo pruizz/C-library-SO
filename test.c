@@ -3,11 +3,11 @@
 #include <string.h>
 #include "libreria.h" 
 
-#define DefaultValue 10
+#define DefaultLines 10
 
 int main(int argc, char *argv[]) {
-    int n = DefaultValue;
-    int *funct = NULL;
+    int n = DefaultLines;
+    char *funct = NULL;
 
     if (argc < 2 || argc > 3) {
         fprintf(stderr, "Usage: %s <function_name> [n]\n", argv[0]);
@@ -22,7 +22,7 @@ int main(int argc, char *argv[]) {
     }
 
     //second arg (if exists): n lines
-    if argc == 3 {
+    if (argc == 3) {
         n = atoi(argv[2]);
         if (n <= 0){
             fprintf(stderr, "Usage: %d must be optional or greater than 0", n);
@@ -31,11 +31,11 @@ int main(int argc, char *argv[]) {
     }
 
     //to execute the function
-    if (strcpm(funct, "-head") == 0){
+    if (strcmp(funct, "-head") == 0){
         head(n);
-    }else if (strcpm(funct, "-tail") == 0){
+    }else if (strcmp(funct, "-tail") == 0){
         tail(n);
-    }else if (strcpm(funct, "-longlines") == 0){
+    }else if (strcmp(funct, "-longlines") == 0){
         longlines(n);
     }else {
         fprintf(stderr, "Usage: %s must be '-head', '-tail' or '-longlines'", funct);
