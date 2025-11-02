@@ -1,0 +1,25 @@
+Linea 001: La luna es un satélite natural de la Tierra.
+Linea 002: Este texto tiene como objetivo probar la función tail.
+Linea 003: La programación en C requiere un manejo cuidadoso de la memoria.
+Linea 004: La línea más larga es esta, que tiene muchos más caracteres que las otras para poder probar la función longlines correctamente, espero que esto funcione bien.
+Linea 005: Es importante liberar la memoria asignada con malloc para evitar fugas.
+Linea 006: La función head solo debe mostrar las primeras N líneas.
+Linea 007: La función tail debe usar un búfer circular para ser eficiente.
+Linea 008: El operador módulo (%) es clave en el búfer circular.
+Linea 009: Las estructuras de datos eficientes mejoran el rendimiento.
+Linea 010: C es un lenguaje potente y cercano al hardware.
+Linea 011: Los punteros son fundamentales en C.
+Linea 012: Compilar con todas las advertencias activadas es una buena práctica.
+Linea 013: El error de 'int vs pointer' es muy común al usar char y char*.
+Linea 014: Recuerda usar comillas simples para caracteres y dobles para cadenas.
+Linea 015: La recursividad es una herramienta poderosa pero debe usarse con cuidado.
+Linea 016: Los sistemas operativos suelen estar escritos en C.
+Linea 017: El desarrollo de software requiere paciencia y mucha práctica.
+Linea 018: Esta es una linea de longitud media.
+Linea 019: Otra línea de prueba.
+Linea 020: La implementación de un comando de shell requiere replicar su comportamiento original.
+Linea 021: El río Nilo es el más largo del mundo.
+Linea 022: Los árboles de Navidad son coníferas.
+Linea 023: Prueba de línea extra.
+Linea 024: La función longlines debería ordenar por longitud descendente.
+Linea 025: Última línea del archivo de prueba.
