@@ -10,7 +10,7 @@ int head(int N) {
     int i = 0;
 
     if (N <= 0) {
-        exit(0);
+        return 1;
     }
     while (i < N && fgets(buffer, MAX_LINE_BUFFER, stdin) != NULL){
         int len = strlen(buffer);
@@ -28,7 +28,7 @@ int head(int N) {
 int tail(int N) {
     // Caso 1: EL numero de lineas introducido es <= 0 -> No se imprime nada
     if (N <= 0){
-        exit(0);
+        return 1;
     }
     // Caso 2: Introduce N lineas;
     // Usamos calloc para reservar N "espacios" para punteros de char.
@@ -100,11 +100,11 @@ int tail(int N) {
         }
     }
     free(lines);
+    return 0;
 }
 
 
 int longlines(int N) {
-    #define max 1024 //ns si tenemos q ponerlo global para toda la libreria- si
     typedef struct {
         char *text; //the text we are saving
         int length; //to know which are the longest lines
@@ -112,14 +112,14 @@ int longlines(int N) {
     Line *lines = NULL;
     int cont = 0;
     int capacity = 10;  //for example
-    char buffer[max];
+    char buffer[MAX_LINE_BUFFER];
     int len;
     int i;
     int j;
     Line *temp;
 
     if (N <= 0) { //idk if it's necessary because we have a test.c
-        return 0;
+        return 1;
     }
 
     lines = malloc(capacity * sizeof(Line)); //pointer to the reserved memory block
@@ -128,7 +128,7 @@ int longlines(int N) {
         return 1;
     }
     //read lines from stdin
-    while (fgets(buffer, max, stdin) != NULL){
+    while (fgets(buffer, MAX_LINE_BUFFER, stdin) != NULL){
         len = strlen(buffer);
         if (buffer[len-1] == '\n') {
             buffer[len-1] = '\0';
@@ -153,6 +153,10 @@ int longlines(int N) {
         cont++;
     }
     //sort lines from longest to shortest
+    /*hemos utilizado el clásico algoritmo burbuja para ordenar por longitud a pesar
+     de que buscando en internet vimos que podiamos implementar un quicksort, pero 
+     dado nuestra poca experiencia en C creíamos que era demasiado "artificial" utilizar
+     ese quicksort */
     for(i = 0; i < cont - 1; i++){
         for(j = i + 1; j < cont; j++){
             if(lines[j].length > lines[i].length){
