@@ -10,13 +10,9 @@ int head(int N) {
     int i = 0;
 
     if (N <= 0) {
-        return 1;
+        return 0;
     }
     while (i < N && fgets(buffer, MAX_LINE_BUFFER, stdin) != NULL){
-        int len = strlen(buffer);
-        if (buffer[len-1] == '\n'){
-            buffer[len-1] = '\0';
-        } 
         printf("%s", buffer);
         i++;
     }
@@ -26,51 +22,47 @@ int head(int N) {
 
 
 int tail(int N) {
-    // Caso 1: EL numero de lineas introducido es <= 0 -> No se imprime nada
     if (N <= 0){
-        return 1;
+        return 0;
     }
-    // Caso 2: Introduce N lineas;
+    
     // Usamos calloc para reservar N "espacios" para punteros de char.
-    // calloc(N, tamaño) -> reserva memoria y la inicializa toda a cero (NULL).
     char **lines =  calloc(N,sizeof(char *));
     if (lines == NULL){
         fprintf(stderr, "Error a la hora de reservar memoria");
-        exit(1);
+        return 1;
     }
 
-    char aux_buffer[MAX_LINE_BUFFER] ;// Creamos un array auxiliar de el maximo tamaño de la cadena para cada linea almacenada
+    char aux_buffer[MAX_LINE_BUFFER] ;
     int num_lines = 0;
     int len = 0;
-    int pos; // posicion del array[0-N-1]
+    int pos;
 
     while(fgets(aux_buffer,MAX_LINE_BUFFER,stdin) != NULL){
         //Quitamos los posibles saltos de lineas que con fgets se almacenan en cada linea
         len = strlen(aux_buffer);
         if (len > 0 && aux_buffer[len - 1] == '\n') {
             aux_buffer[len - 1] = '\0';
-            len--; // Reducimos la longitud
+            len--; 
         }
-        
         pos = num_lines % N;
-        //Si ya hay un ellemento lo eliminamos 
+        // Caso de que ya haya un elemento dentro del array
         if (lines[pos] != NULL){
             free(lines[pos]);
         }
         // Reservamos memoria nueva para la línea actual
         lines[pos] = malloc(len + 1); // +1 para el '\0'
 
-        if (lines[pos] == NULL) {
+        if (lines[pos] == NULL) { // Si para alguna reserva de memoria por linea se produce un error hay que salir pero antes borra todo lo creado hasta ese momento
             fprintf(stderr, "Error: No se pudo reservar memoria para la línea.\n");
             for (int i = 0; i < N; i++) {
-            // Solo liberamos si realmente hay una cadena (no es NULL)
                 if (lines[i] != NULL) {
                     free(lines[i]);
                 }
             }
-            // 2. Liberar el array principal reservado con calloc
+            
             free(lines);
-            exit(1);
+            return 1;
         }
 
         strcpy(lines[pos],aux_buffer);
@@ -79,21 +71,17 @@ int tail(int N) {
 
     }
     
-    // Mostrar solo las n lineas en orden correcto
-    int indice_inicio = (num_lines < N) ? 0 : (num_lines % N);
     
-    // Decidimos cuántas líneas imprimir en total
+    int indice_inicio = (num_lines < N) ? 0 : (num_lines % N);
     int lineas_a_imprimir = (num_lines < N) ? num_lines : N;
 
     for (int i = 0; i < lineas_a_imprimir; i++) {
-        // Calculamos el índice real dentro del array, dando la vuelta si es necesario
         int indice_real = (indice_inicio + i) % N;
-        
-        // Imprimimos la línea
+    
         printf("%s\n", lines[indice_real]);
     }
     
-    //Limpiar la memoria
+    //Limpiar la memoria antes de salir
     for (int i = 0; i<N ; i++){
         if (lines[i] != NULL) {
             free(lines[i]);
@@ -118,8 +106,8 @@ int longlines(int N) {
     int j;
     Line *temp;
 
-    if (N <= 0) { //idk if it's necessary because we have a test.c
-        return 1;
+    if (N <= 0) { 
+        return 0;
     }
 
     lines = malloc(capacity * sizeof(Line)); //pointer to the reserved memory block

@@ -1,5 +1,5 @@
 Linea 001: La luna es un satélite natural de la Tierra.
-Linea 002: Este texto tiene como objetivo probar la función tail.
+Linea 002: Este texto tiene como objetivo probar la función head,tail y longlines.
 Linea 003: La programación en C requiere un manejo cuidadoso de la memoria.
 Linea 004: La línea más larga es esta, que tiene muchos más caracteres que las otras para poder probar la función longlines correctamente, espero que esto funcione bien.
 Linea 005: Es importante liberar la memoria asignada con malloc para evitar fugas.
