@@ -101,12 +101,12 @@ int tail(int N) {
 
 int longlines(int N) {
     typedef struct {
-        char *text; //the text we are saving
-        int length; //to know which are the longest lines
+        char *text; //texto que estamos guardando
+        int length; //almacenamos la longitud de la linea
     } Line;
     Line *lines = NULL;
     int cont = 0;
-    int capacity = 10;  //for example
+    int capacity = 10;  //cantidad inicial de líneas que podemos almacenar
     char buffer[MAX_LINE_BUFFER];
     int len;
     int i;
@@ -117,15 +117,15 @@ int longlines(int N) {
         return 0;
     }
 
-    lines = malloc(capacity * sizeof(Line)); //pointer to the reserved memory block
+    lines = malloc(capacity * sizeof(Line)); 
     if (lines == NULL) {
         fprintf(stderr, "Memory error\n");
         return 1;
     }
-    //read lines from stdin
+    //vamos leyendo las líneas de stdin
     while (fgets(buffer, MAX_LINE_BUFFER, stdin) != NULL){
         len = strlen(buffer);
-        if (buffer[len-1] == '\n') {
+        if (len > 0 && buffer[len-1] == '\n') {
             buffer[len-1] = '\0';
             len--;
         }
@@ -147,7 +147,7 @@ int longlines(int N) {
         lines[cont].length = len;
         cont++;
     }
-    //sort lines from longest to shortest
+    //ordenamos líneas de mayor a menor longitud
     /*hemos utilizado el clásico algoritmo burbuja para ordenar por longitud a pesar
      de que buscando en internet vimos que podiamos implementar un quicksort, pero 
      dado nuestra poca experiencia en C creíamos que era demasiado "artificial" utilizar
@@ -161,12 +161,14 @@ int longlines(int N) {
             }
         }
     }
-    //print n lines
-    if (N > cont){ //to control if there are less than n lines
+    //imprimimos n líneas más largas
+    if (N > cont){ //controlamos que no se pidan más líneas de las que hay
         N = cont;
     }
-    for (i = 0; i < N; i++){
+    for (i = 0; i < N; i++){ //bucle para mostrar por stdout las N líneas más largas
         printf("%s\n", lines[i].text);
+    }
+    for (i = N; i < cont; i++){ //bucle auxiliar para liberar memoria
         free(lines[i].text);
     }
     free(lines);
