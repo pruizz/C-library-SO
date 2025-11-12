@@ -1,0 +1,20 @@
+Longitud 4: hola
+Longitud 8: hola que
+Longitud 5: adios
+Longitud 8: buen dia
+Longitud 8: como vas
+Longitud 5: amigo
+Longitud 13: buenas noches
+Longitud 4: casa
+Longitud 12: programacion
+Longitud 9: ejercicio
+Longitud 5: mundo
+Longitud 17: linea de ejemplo
+Longitud 16: prueba de texto
+Longitud 9: plantilla
+Longitud 10: desarrollo
+Longitud 11: computadora
+Longitud 7: lectura
+Longitud 8: practica
+Longitud 18: mensaje de prueba
+Longitud 11: aprendizaje
