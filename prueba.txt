@@ -23,3 +23,178 @@ Linea 022: Los árboles de Navidad son coníferas.
 Linea 023: Prueba de línea extra.
 Linea 024: La función longlines debería ordenar por longitud descendente.
 Linea 025: Última línea del archivo de prueba.
+Linea 026: El lenguaje C fue desarrollado por Dennis Ritchie en los años 70.
+Linea 027: Unix fue uno de los primeros sistemas escritos en C.
+Linea 028: Las variables globales deben usarse con moderación.
+Linea 029: La modularidad del código mejora su mantenimiento.
+Linea 030: Los comentarios son esenciales para entender el código más adelante.
+Linea 031: Los bucles for, while y do-while permiten iteraciones controladas.
+Linea 032: El preprocesador de C maneja macros y directivas como #define o #include.
+Linea 033: Un archivo fuente en C suele tener extensión .c.
+Linea 034: Los archivos de cabecera suelen terminar en .h.
+Linea 035: El compilador traduce el código fuente a código objeto.
+Linea 036: La función main es el punto de entrada de un programa en C.
+Linea 037: La instrucción return indica el valor de salida de una función.
+Linea 038: La sentencia if permite ejecutar código condicionalmente.
+Linea 039: La función printf imprime texto por la salida estándar.
+Linea 040: La función scanf lee datos de la entrada estándar.
+Linea 041: Es posible formatear cadenas con especificadores como %d o %s.
+Linea 042: Los punteros permiten acceder directamente a direcciones de memoria.
+Linea 043: El operador * se usa para desreferenciar un puntero.
+Linea 044: El operador & obtiene la dirección de una variable.
+Linea 045: Los arreglos almacenan múltiples elementos del mismo tipo.
+Linea 046: Un puntero a char puede usarse para manejar cadenas.
+Linea 047: Las funciones pueden devolver punteros.
+Linea 048: Es posible pasar punteros como argumentos a funciones.
+Linea 049: malloc reserva memoria dinámica en el heap.
+Linea 050: free libera la memoria previamente asignada.
+Linea 051: realloc permite cambiar el tamaño de una zona de memoria.
+Linea 052: memset inicializa una región de memoria con un valor.
+Linea 053: memcpy copia bloques de memoria.
+Linea 054: strcmp compara dos cadenas de caracteres.
+Linea 055: strlen devuelve la longitud de una cadena.
+Linea 056: strcpy copia una cadena en otra.
+Linea 057: strcat concatena dos cadenas.
+Linea 058: fgets permite leer una línea de un archivo.
+Linea 059: fopen abre un archivo para lectura o escritura.
+Linea 060: fclose cierra un archivo abierto.
+Linea 061: fprintf permite escribir en un archivo con formato.
+Linea 062: fscanf permite leer datos formateados desde un archivo.
+Linea 063: fseek mueve el puntero de lectura dentro de un archivo.
+Linea 064: ftell devuelve la posición actual en un archivo.
+Linea 065: rewind devuelve el puntero al inicio del archivo.
+Linea 066: exit termina la ejecución del programa inmediatamente.
+Linea 067: assert evalúa condiciones durante la depuración.
+Linea 068: srand inicializa la semilla del generador aleatorio.
+Linea 069: rand genera números pseudoaleatorios.
+Linea 070: time devuelve la hora actual del sistema.
+Linea 071: La librería stdlib.h contiene funciones útiles de propósito general.
+Linea 072: stdio.h gestiona la entrada y salida estándar.
+Linea 073: string.h ofrece utilidades para el manejo de cadenas.
+Linea 074: math.h incluye funciones matemáticas como sqrt o pow.
+Linea 075: limits.h define los valores máximo y mínimo de los tipos numéricos.
+Linea 076: float.h define las características de los tipos en coma flotante.
+Linea 077: errno indica errores producidos por llamadas a funciones.
+Linea 078: perror imprime el mensaje de error correspondiente.
+Linea 079: Un programa robusto debe manejar los errores adecuadamente.
+Linea 080: La portabilidad del código depende del uso de estándares.
+Linea 081: ANSI C fue el primer estándar formal del lenguaje.
+Linea 082: C99 y C11 son versiones posteriores del estándar.
+Linea 083: typedef permite definir alias para tipos.
+Linea 084: struct agrupa varios campos bajo una misma entidad.
+Linea 085: union comparte la misma memoria entre varios tipos.
+Linea 086: enum define un conjunto de valores constantes.
+Linea 087: const evita que una variable cambie su valor.
+Linea 088: volatile informa al compilador de que una variable puede cambiar externamente.
+Linea 089: static controla la visibilidad y el tiempo de vida de las variables.
+Linea 090: extern declara variables definidas en otro archivo.
+Linea 091: register sugiere almacenar una variable en un registro.
+Linea 092: goto permite saltar a otra parte del código, pero su uso no se recomienda.
+Linea 093: break interrumpe un bucle o una instrucción switch.
+Linea 094: continue salta a la siguiente iteración del bucle.
+Linea 095: switch evalúa una expresión y ejecuta el caso correspondiente.
+Linea 096: case define una alternativa dentro de un switch.
+Linea 097: default se ejecuta si ningún caso coincide.
+Linea 098: do-while garantiza al menos una ejecución del bloque.
+Linea 099: sizeof devuelve el tamaño en bytes de una variable o tipo.
+Linea 100: Un byte equivale generalmente a 8 bits.
+Linea 101: int suele ocupar 4 bytes en la mayoría de sistemas modernos.
+Linea 102: char ocupa exactamente 1 byte.
+Linea 103: double ofrece mayor precisión que float.
+Linea 104: long long permite representar enteros muy grandes.
+Linea 105: short ocupa menos espacio que int.
+Linea 106: unsigned evita valores negativos en tipos enteros.
+Linea 107: signed permite representar números negativos.
+Linea 108: Una buena práctica es inicializar siempre las variables.
+Linea 109: Los errores de segmentación ocurren al acceder a memoria inválida.
+Linea 110: Un puntero nulo apunta a ninguna dirección válida.
+Linea 111: NULL es la constante que representa un puntero nulo.
+Linea 112: Seguir convenciones de estilo mejora la legibilidad del código.
+Linea 113: La indentación uniforme es fundamental para mantener el orden.
+Linea 114: Un programa se puede dividir en varios módulos .c y .h.
+Linea 115: El enlazador combina los archivos objeto en un ejecutable final.
+Linea 116: Un Makefile automatiza el proceso de compilación.
+Linea 117: Las dependencias deben mantenerse actualizadas.
+Linea 118: Las herramientas de análisis estático detectan errores antes de ejecutar.
+Linea 119: La depuración puede hacerse con gdb.
+Linea 120: printf también puede usarse para depurar en casos simples.
+Linea 121: Un puntero doble se usa comúnmente con matrices dinámicas.
+Linea 122: La aritmética de punteros permite recorrer arreglos eficientemente.
+Linea 123: Los archivos binarios almacenan datos sin formato de texto.
+Linea 124: fread y fwrite manejan archivos binarios.
+Linea 125: Las estructuras se pueden escribir y leer directamente en archivos binarios.
+Linea 126: Es importante conocer el tamaño exacto de las estructuras.
+Linea 127: Un programa debe liberar todos los recursos antes de terminar.
+Linea 128: El código limpio facilita la detección de errores.
+Linea 129: Un comentario mal puesto puede confundir más que ayudar.
+Linea 130: La documentación técnica es clave en proyectos grandes.
+Linea 131: La eficiencia no siempre debe priorizarse sobre la claridad.
+Linea 132: El compilador puede optimizar el código si se usa correctamente.
+Linea 133: El uso excesivo de macros puede dificultar el mantenimiento.
+Linea 134: Las funciones inline evitan llamadas costosas.
+Linea 135: Las librerías dinámicas se cargan en tiempo de ejecución.
+Linea 136: Las librerías estáticas se enlazan en tiempo de compilación.
+Linea 137: Un puntero a función permite pasar funciones como parámetros.
+Linea 138: qsort permite ordenar un arreglo usando una función de comparación.
+Linea 139: bsearch busca un elemento en un arreglo ordenado.
+Linea 140: Un algoritmo de ordenación eficiente ahorra tiempo y memoria.
+Linea 141: El algoritmo quicksort es uno de los más rápidos.
+Linea 142: mergesort divide y conquista para ordenar.
+Linea 143: bubblesort es fácil de implementar pero poco eficiente.
+Linea 144: insertion sort es útil para pequeñas colecciones.
+Linea 145: selection sort selecciona el mínimo en cada iteración.
+Linea 146: heap sort usa una estructura de montículo.
+Linea 147: binary search busca eficientemente en listas ordenadas.
+Linea 148: La complejidad temporal mide el tiempo según el tamaño de los datos.
+Linea 149: La complejidad espacial mide el uso de memoria.
+Linea 150: Big O describe el comportamiento asintótico de un algoritmo.
+Linea 151: O(1) significa tiempo constante.
+Linea 152: O(n) significa tiempo lineal.
+Linea 153: O(n²) es típico de algoritmos con doble bucle.
+Linea 154: O(log n) se asocia con algoritmos de búsqueda binaria.
+Linea 155: O(n log n) es común en algoritmos de ordenación eficientes.
+Linea 156: Las estructuras de datos son la base de la informática.
+Linea 157: Las pilas siguen la política LIFO.
+Linea 158: Las colas siguen la política FIFO.
+Linea 159: Las listas enlazadas permiten inserciones dinámicas.
+Linea 160: Los árboles representan relaciones jerárquicas.
+Linea 161: Los grafos modelan relaciones entre entidades.
+Linea 162: Los nodos y aristas forman los grafos.
+Linea 163: Los recorridos en anchura y profundidad son fundamentales.
+Linea 164: Las tablas hash permiten búsquedas rápidas.
+Linea 165: Las colisiones deben manejarse adecuadamente en tablas hash.
+Linea 166: La recursión puede reemplazarse por pilas explícitas.
+Linea 167: Los algoritmos recursivos requieren condiciones base.
+Linea 168: La memoria de pila es limitada.
+Linea 169: Una recursión infinita causa desbordamiento de pila.
+Linea 170: Los sistemas embebidos usan C por su eficiencia.
+Linea 171: El control de procesos y señales es parte de la programación en C.
+Linea 172: La función fork crea un nuevo proceso en sistemas Unix.
+Linea 173: exec reemplaza el proceso actual por otro programa.
+Linea 174: wait permite sincronizar procesos.
+Linea 175: Los descriptores de archivo son enteros que identifican recursos.
+Linea 176: select y poll permiten esperar eventos en varios descriptores.
+Linea 177: Los sockets se usan para comunicación entre procesos.
+Linea 178: TCP garantiza la entrega ordenada de datos.
+Linea 179: UDP ofrece comunicación sin conexión.
+Linea 180: Las direcciones IP identifican dispositivos en una red.
+Linea 181: Los puertos diferencian servicios dentro de un mismo host.
+Linea 182: Un servidor escucha en un puerto específico.
+Linea 183: Un cliente inicia la conexión hacia el servidor.
+Linea 184: send y recv envían y reciben datos respectivamente.
+Linea 185: close cierra un socket o descriptor.
+Linea 186: El modelo cliente-servidor es básico en redes.
+Linea 187: Los hilos permiten ejecutar tareas concurrentes.
+Linea 188: pthreads es la biblioteca estándar de hilos en C.
+Linea 189: Los mutex evitan condiciones de carrera.
+Linea 190: Las variables de condición sincronizan hilos.
+Linea 191: Un deadlock ocurre cuando dos hilos esperan mutuamente.
+Linea 192: La concurrencia mejora el rendimiento en sistemas multicore.
+Linea 193: La sincronización es clave para la coherencia de datos.
+Linea 194: Los semáforos son otra herramienta de sincronización.
+Linea 195: La programación en C enseña a pensar en bajo nivel.
+Linea 196: Las pruebas unitarias ayudan a detectar errores temprano.
+Linea 197: El control de versiones permite trabajar en equipo.
+Linea 198: Git es una de las herramientas más populares para ello.
+Linea 199: La experiencia se gana con la práctica constante.
+Linea 200: Fin del archivo de prueba extendido.

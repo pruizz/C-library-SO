@@ -3,10 +3,10 @@
 #include <string.h>
 #include "libreria.h" 
 
-#define DefaultLines 10
+#define DEFAULT_LINES 10
 
 int main(int argc, char *argv[]) {
-    int n = DefaultLines;
+    int n = DEFAULT_LINES;
     char *funct = NULL;
 
     if (argc < 2 || argc > 3) {
