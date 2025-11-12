@@ -22,21 +22,28 @@ int head(int N) {
 
 
 int tail(int N) {
+    
+    char aux_buffer[MAX_LINE_BUFFER] ;
+    int num_lines = 0;
+    int len = 0;
+    int pos;
+    int indice_inicio;
+    int lineas_a_imprimir;
+    char **lines;
+    int indice_real;
+    int i;
+
     if (N <= 0){
         return 0;
     }
     
     // Usamos calloc para reservar N "espacios" para punteros de char.
-    char **lines =  calloc(N,sizeof(char *));
+    lines =  calloc(N,sizeof(char *));
     if (lines == NULL){
         fprintf(stderr, "Error a la hora de reservar memoria");
         return 1;
     }
 
-    char aux_buffer[MAX_LINE_BUFFER] ;
-    int num_lines = 0;
-    int len = 0;
-    int pos;
 
     while(fgets(aux_buffer,MAX_LINE_BUFFER,stdin) != NULL){
         //Quitamos los posibles saltos de lineas que con fgets se almacenan en cada linea
@@ -55,7 +62,7 @@ int tail(int N) {
 
         if (lines[pos] == NULL) { // Si para alguna reserva de memoria por linea se produce un error hay que salir pero antes borra todo lo creado hasta ese momento
             fprintf(stderr, "Error: No se pudo reservar memoria para la línea.\n");
-            for (int i = 0; i < N; i++) {
+            for (i = 0; i < N; i++) {
                 if (lines[i] != NULL) {
                     free(lines[i]);
                 }
@@ -72,11 +79,11 @@ int tail(int N) {
     }
     
     
-    int indice_inicio = (num_lines < N) ? 0 : (num_lines % N);
-    int lineas_a_imprimir = (num_lines < N) ? num_lines : N;
+    indice_inicio = (num_lines < N) ? 0 : (num_lines % N);
+    lineas_a_imprimir = (num_lines < N) ? num_lines : N;
 
-    for (int i = 0; i < lineas_a_imprimir; i++) {
-        int indice_real = (indice_inicio + i) % N;
+    for ( i = 0; i < lineas_a_imprimir; i++) {
+        indice_real = (indice_inicio + i) % N;
     
         printf("%s\n", lines[indice_real]);
     }
