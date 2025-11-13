@@ -6,12 +6,12 @@
 #define MAX_LINE_BUFFER 1024
 
 int head(int N) {
-    char buffer[MAX_LINE_BUFFER]; // Un solo búfer para reutilizar puesto que no es necesario ir almacenando nada -> solo nos quedamos con las N primerad que llegen
+    char buffer[MAX_LINE_BUFFER]; // Un solo búfer para reutilizar puesto que no es necesario ir almacenando nada -> solo nos quedamos con las N primeras que llegen
     int i = 0;
-
     if (N <= 0) {
         return 0;
     }
+    // Se recorre las lineas de = 0 a N y mientras que haya lineas que leer de entrada estanndar
     while (i < N && fgets(buffer, MAX_LINE_BUFFER, stdin) != NULL){
         printf("%s", buffer);
         i++;
@@ -60,7 +60,7 @@ int tail(int N) {
         // Reservamos memoria nueva para la línea actual
         lines[pos] = malloc(len + 1); // +1 para el '\0'
 
-        if (lines[pos] == NULL) { // Si para alguna reserva de memoria por linea se produce un error hay que salir pero antes borra todo lo creado hasta ese momento
+        if (lines[pos] == NULL) { // Si para alguna reserva de memoria por linea se produce un error --> hay que salir --> pero antes borrar todo lo creado hasta ese momento
             fprintf(stderr, "Error: No se pudo reservar memoria para la línea.\n");
             for (i = 0; i < N; i++) {
                 if (lines[i] != NULL) {
@@ -71,20 +71,21 @@ int tail(int N) {
             free(lines);
             return 1;
         }
-
+        //copiamos la linea al array
         strcpy(lines[pos],aux_buffer);
 
         num_lines ++;
 
     }
     
-    
+    //Como es un array circular hay que calcular la posicion de inicio con el modulo N al numero de lineas leidas
     indice_inicio = (num_lines < N) ? 0 : (num_lines % N);
+    //Cuantas lineas se van a mostrar 
     lineas_a_imprimir = (num_lines < N) ? num_lines : N;
 
     for ( i = 0; i < lineas_a_imprimir; i++) {
-        indice_real = (indice_inicio + i) % N;
-    
+        indice_real = (indice_inicio + i) % N; 
+        //sabemos el indice de incio pues vamos sumando 1 a el inicio y hacemos modulo por si hay que dar la vuelta al array
         printf("%s\n", lines[indice_real]);
     }
     
@@ -119,7 +120,7 @@ int longlines(int N) {
 
     lines = malloc(capacity * sizeof(Line)); 
     if (lines == NULL) {
-        fprintf(stderr, "Memory error\n");
+        fprintf(stderr, "Error de memoria\n");
         return 1;
     }
     //vamos leyendo las líneas de stdin
@@ -133,7 +134,7 @@ int longlines(int N) {
             capacity = capacity * 2;
             Line *temp = realloc(lines, capacity * sizeof(Line));
             if (temp == NULL) {
-                fprintf(stderr, "Memory error\n");
+                fprintf(stderr, "Error de memoria\n");
                 for (i = 0; i < cont; i++) {
                     free(lines[i].text);
                 }
